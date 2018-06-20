@@ -1,3 +1,5 @@
+"use strict"
+
 $(function(){
   $('.homepage').masonry({
     // options
@@ -11,19 +13,27 @@ $(function(){
 
 
 
-
-
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    document.getElementById("MySidenav").style.transform = 'translate3d(0, 0, 0)';
+    document.getElementById("Main").style.transform = 'translate3d(250px, 0, 0)';
+    document.getElementsByClassName("_full_opasity")[0].style.zIndex = '2';
+    document.getElementsByClassName("_full_opasity")[0].style.backgroundColor = 'rgba(0,0,0,0.5)';
 }
 
 /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
+    document.getElementById("MySidenav").style.transform = 'translate3d(-250px, 0, 0)';
+    document.getElementById("Main").style.transform = 'translate3d(0, 0, 0)';
+    document.getElementsByClassName("_full_opasity")[0].style.backgroundColor = 'rgba(0, 0, 0, 0)';
+    document.getElementsByClassName("_full_opasity")[0].style.zIndex = '-1';
 }
+
+
+
+
+
+// let x=(a, b)=>a+b;
+
+// console.log(x(2,3));   
 
